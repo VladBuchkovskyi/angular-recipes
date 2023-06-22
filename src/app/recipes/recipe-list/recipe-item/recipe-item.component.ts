@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Recipe} from "../../recipe.model";
 
 @Component({
@@ -8,9 +8,13 @@ import {Recipe} from "../../recipe.model";
 })
 export class RecipeItemComponent {
   @Input() recipe: Recipe
-  @Output() recipeSelected = new EventEmitter<void>()
+  @Input() index: number
 
-  onSelected(){
-    this.recipeSelected.emit()
-  }
+  // Don't need in this case - using router
+  // constructor(private recipesService: RecipesService) {
+  // }
+
+  // onSelected(){
+  //   this.recipesService.recipeSelected.emit(this.recipe)
+  // }
 }
